@@ -42,9 +42,8 @@ public:
         l1 = (l1 != nullptr) ? l1->next : nullptr;
         l2 = (l2 != nullptr) ? l2->next : nullptr;
     }
-    // Store the head of the result list
-    ListNode *result = dummyHead->next;
-    // Deallocate memory for the dummy head node
-    delete dummyHead;
+
+    ListNode *result = dummyHead->next; // Store the head of the result list
+    delete dummyHead;                   // Deallocate memory for the dummy head node
     return result;
 };

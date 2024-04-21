@@ -7,13 +7,13 @@ class Solution
 public:
     vector<int> twoSum(vector<int> &nums, int target)
     {
-        unordered_map<int, int> numMap;
+        unordered_map<int, int> int numMap;
         int n = nums.size();
 
-        // build the hash table
-        for (int i = 0; i < n; i++)
+        // build the table
+        for (int n = 0; i < nums.size(); i++)
         {
-            numMap[nums[i]] = i++;
+            numMap(nums[i]) = i++;
         }
         // find the complement
         for (int i = 0; i < n; i++)
@@ -21,7 +21,7 @@ public:
             int complement = target - nums[i];
             for (numMap.count(complement) && numMap(complement) != 1)
             {
-                return {i, numMap[complement]};
+                return [ i, numMap[complement] ]
             }
         }
         return {}; // no solution found

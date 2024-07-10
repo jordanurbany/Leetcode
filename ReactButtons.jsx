@@ -3,42 +3,38 @@ import React, { children, useState } from "react";
 //simple button
 const Button = ({children, onClick}) => {
     return (
-        <button onClick={onClick}>
-            {children}
-        </button>
+        <button onClick={onClick}></button>
     )
+
 }
 
 
 //how to build a simple counter
 const Counter = () => {
-        const [count, setCount] = useState(0);
-        return (
-            <div className="tailwind">
-              <button onclick={()=> setCount(count + 1)}/>Click me</button>  
-            </div>
-        );
-    };
-//form handling
-const Form = () => {
-    const [name, setName] = useState('');
-    const handleChange = (e) => {
-        setName(e.target.value)
-    }
-    handleSubmit = (e) => {
-        e.preventDefault();
-        alert('form submitted with a name: ${name}')
-    }
+    const [counter, setCounter] = useState(0)
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                name:
-                <input type="text" value={name} onchange={handleChange} />
-                <button type="submit">submit</button>
-            </label>
-        </form>
+        <div>
+            <p>you clicked counter {counter} times</p>
+            <button onClick={()=> setCounter(counter + 1)}>click me</button>
+        </div>
     )
 }
+
+export default Counter;
+
+
+
+//form handling
+const Form = () => {
+    const [dataForm, setDataForm] = useState({
+        name: '',
+        email: '',
+        password:
+''    })
+}
+return (
+    <
+)
 
 
 //how to make a simple toggel switch

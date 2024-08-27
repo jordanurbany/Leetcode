@@ -1,24 +1,23 @@
 import React, { children, useState } from "react";  
 
 //simple button
-const Button = ({children, onClick}) => {
+const Button = ({children, props}) => {
     return (
-        <button onClick={onClick}></button>
+        <button>{children}</button>
     )
-
-}
+};
 
 
 //how to build a simple counter
 const Counter = () => {
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(0);
     return (
         <div>
-            <p>you clicked counter {counter} times</p>
-            <button onClick={()=> setCounter(counter + 1)}>click me</button>
+        <p>youve clicked the button {counter} times</p>
+        <button onClick={()=> setCounter(counter + 1)}>click me</button>
         </div>
     )
-}
+};
 
 export default Counter;
 
@@ -26,19 +25,36 @@ export default Counter;
 
 //form handling
 const Form = () => {
-    const [dataForm, setDataForm] = useState({
+    const [dataForm, setDataFrom] = useState({
         name: '',
         email: '',
-        password:
-''    })
-}
+        password: ''
+    })
+};
+      const HandleChange = (e) => {
+        const [name, value] = e.target;
+        setDataFrom({...dataForm, [name]: value});
+    
+      };
+      
+      
+      
+      const HandleSubmit = (e) => {
+        e.preventDefualt();
+        alert(`submitted a name: ${dataForm.name} and email: ${dataFrom.email}`)
+      };
 return (
-    <
+    <form onSubmit={handleSubmit}>
+        <input type="text" name="name" value={dataForm.name} onChange={handleChange}></input>
+        <input type="text" name="email" value={dataForm.name} onChange={handleChange}></input>
+        <input type="text" name="password" value={dataForm.name} onChange={handleChange}></input>
+    </form>
+    
 )
 
 
 //how to make a simple toggel switch
-const Toggle = () => (
+const Toggle = () => {
     const [isOn, setIsOn] = useState(false);
     return (
         <div className="toggle">
@@ -49,7 +65,7 @@ const Toggle = () => (
         </div>
     )
 
-);
+};
 
 
 

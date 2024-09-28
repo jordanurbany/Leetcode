@@ -30,3 +30,15 @@ public:
         return ans;
     }
 };
+
+RomanToInt(string s)
+{
+    unorderMap<char, int> map;
+    map['i'] = 1;
+    map['V'] = 5;
+    map['X'] = 10;
+    map['L'] = 50;
+    map['C'] = 100;
+    map['D'] = 500;
+    map['M'] = 1000;
+}
